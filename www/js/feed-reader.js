@@ -62,7 +62,7 @@ var Feed = (function () {
             var url = $(this).data('link');
 
             if (/^http/.test(url)) {
-                var ref = window.open(url, '_blank', 'location=yes');
+                var ref = cordova.InAppBrowser.open(url, '_blank', 'toolbarposition=bottom');
                 ref.addEventListener("exit", function () { });
             } else {
                 alert('Invalid URL.');
